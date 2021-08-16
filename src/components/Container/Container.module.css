@@ -1,0 +1,14 @@
+.container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 132px);
+    padding: 96px 16px 36px;
+    background-color: #1d1d1d;
+    z-index: 10;
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column;
+}

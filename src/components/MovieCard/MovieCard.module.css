@@ -1,0 +1,9 @@
+.cardContainer {
+    position: relative;
+    width: 375px;
+    height: 600px;
+    padding: 24px;
+    border: solid #8696a6 2px;
+    border-radius: 24px;
+    margin-right: 24px;
+}
