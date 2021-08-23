@@ -1,9 +1,14 @@
-import { api } from './baseAPIConfig';
+import { apiMovieList } from './baseAPIConfig';
 
-export default async function getMovieByTitle(title: string) {
+export default async function getPopularMovies(queryParams: any) {
     try {
-        const movieInfo = await api.get('', { params: { t: title } });
-        return movieInfo;
+        return await apiMovieList.get('', {
+            params: {
+                type: 'get-popular-movies',
+                page: queryParams.page,
+                year: queryParams.year,
+            },
+        });
     } catch (e) {
         console.error('movieInfoError', e);
     }

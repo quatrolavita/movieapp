@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-//redux
-//import { createStore } from 'redux';
 //routs
 import { routes } from './routs';
+
+//styles
+import './assets/reset.css';
 
 function App() {
     return (

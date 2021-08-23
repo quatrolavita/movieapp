@@ -4,3 +4,8 @@ export default function getDisplayName(WrappedComponent: {
 }): string {
     return WrappedComponent.displayName || WrappedComponent.name || 'Component';
 }
+
+export const getCurrentYear = () => {
+    const today = new Date();
+    return today.getFullYear();
+};

@@ -1,3 +1,3 @@
 export interface initialStateTypes {
-    pageList: object[];
+    movieList: object[];
 }

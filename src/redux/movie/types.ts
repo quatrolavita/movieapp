@@ -1,2 +1,3 @@
+export const MOVIE_LIST_REQ = 'PAGE/MOVIE_LIST_REQ';
 export const MOVIE_LIST = 'PAGE/MOVIE_LIST';
-export const SET_MOVIE_INFO = 'PAGE/MOVIE_INFO';
+export const MOVIE_DETAIL = 'PAGE/MOVIE_INFO';

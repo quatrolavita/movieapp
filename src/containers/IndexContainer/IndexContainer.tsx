@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 //styles
+import styles from './IndexContainer.module.css';
 //HOCs
 import { headerWithLogo } from '../../hocs/uiView/Header/headerWithLogo';
 
@@ -8,24 +9,24 @@ import { headerWithLogo } from '../../hocs/uiView/Header/headerWithLogo';
 import Header from '../../components/Header/Header';
 import Container from '../../components/Container/Container';
 import MovieCard from '../../components/MovieCard/MovieCard';
-import getMovieByTitle from '../../api/api';
+
+//action
 
 function IndexContainer(props: any) {
     useEffect(() => {
-        {
-            getMovieByTitle('shrek').then((response) => {
-                console.log('response', response?.data);
-            });
-        }
-    });
-
+        console.log('props', props);
+    }, []);
     return (
         <>
             <HeaderWithLogo />
             <Container>
-                <MovieCard />
-                <MovieCard />
-                <MovieCard />
+                <div className={styles.cardBox}>
+                    <MovieCard />
+                    <MovieCard />
+                    <MovieCard />
+                    <MovieCard />
+                    <MovieCard />
+                </div>
             </Container>
         </>
     );

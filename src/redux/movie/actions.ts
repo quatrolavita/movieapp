@@ -1,17 +1,14 @@
-import { MOVIE_LIST } from './types';
+import { MOVIE_LIST, MOVIE_LIST_REQ } from './types';
 
-import getMovieByTitle from '../../api/api';
+export function setMovieList() {
+    return {
+        type: MOVIE_LIST_REQ,
+    };
+}
 
-export function getDeepLinks() {
-    return async () => {
-        try {
-            const response = await getMovieByTitle('paris');
-            return {
-                type: MOVIE_LIST,
-                payload: response?.data,
-            };
-        } catch (e) {
-            console.error('error', e);
-        }
+export function movieList(payload: object[]) {
+    return {
+        type: MOVIE_LIST,
+        payload: payload,
     };
 }
