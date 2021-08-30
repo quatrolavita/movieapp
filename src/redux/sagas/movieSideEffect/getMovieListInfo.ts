@@ -7,9 +7,13 @@ import { getCurrentYear } from '../../../helpers/utils';
 import * as filterSelector from '../../filter/filterSelectors';
 
 //actions
-import getPopularMovies from '../../../api/api';
-import { MOVIE_LIST_REQ } from '../../movie/types';
-import { movieList } from '../../movie/actions';
+import { getPopularMovies } from '../../../api/api';
+import { MOVIE_LIST_REQUEST } from '../../movie/types';
+import {
+    movieList,
+    setMovieDetailRequestFail,
+    setMovieDetailRequestSuccess,
+} from '../../movie/actions';
 
 function* fetchMovieListInfo() {
     const queryParams = {
@@ -23,11 +27,13 @@ function* fetchMovieListInfo() {
         const response: any = yield call(getPopularMovies, queryParams);
         console.log('MOVIE LIST', response);
         yield put(movieList(response.data.movie_results));
+        yield put(setMovieDetailRequestSuccess(true));
     } catch (e) {
+        yield put(setMovieDetailRequestFail(true));
         console.error(e);
     }
 }
 
 export function* movieListInfoWatcher() {
-    yield takeLatest(MOVIE_LIST_REQ, fetchMovieListInfo);
+    yield takeLatest(MOVIE_LIST_REQUEST, fetchMovieListInfo);
 }

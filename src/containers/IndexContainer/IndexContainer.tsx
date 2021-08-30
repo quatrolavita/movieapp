@@ -13,19 +13,30 @@ import MovieCard from '../../components/MovieCard/MovieCard';
 //action
 
 function IndexContainer(props: any) {
+    const { movieList, history } = props;
     useEffect(() => {
         console.log('props', props);
     }, []);
+
+    const toMovieDetailPage = (movieID: string) => {
+        history.push(`/movie-detail/${movieID}`);
+    };
+
     return (
         <>
             <HeaderWithLogo />
             <Container>
                 <div className={styles.cardBox}>
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
+                    {movieList.map((movieItem: any, index: number) => {
+                        return (
+                            <MovieCard
+                                title={movieItem.title}
+                                imdb_id={movieItem.imdb_id}
+                                key={index}
+                                toMovieDetailPage={toMovieDetailPage}
+                            />
+                        );
+                    })}
                 </div>
             </Container>
         </>

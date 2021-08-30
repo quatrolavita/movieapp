@@ -1,9 +1,14 @@
 .cardContainer {
     position: relative;
-    width: 375px;
-    height: 600px;
-    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 325px;
+    padding: 12px;
     border: solid #8696a6 2px;
     border-radius: 24px;
     margin-right: 24px;
+    margin-bottom: 24px;
+
 }
+

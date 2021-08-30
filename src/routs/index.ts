@@ -1,13 +1,14 @@
-import Index from "../pages/Index/Index";
-
+import Index from '../pages/Index/Index';
+import MovieDetailPage from '../pages/MovieDetail/MovieDetailPage';
 
 export const routes = [
     {
-        path: "/",
+        path: '/',
         component: Index,
         exact: true,
     },
-
-
-
-    ];
+    {
+        path: '/movie-detail/:id',
+        component: MovieDetailPage,
+    },
+];

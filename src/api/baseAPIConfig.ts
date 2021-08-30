@@ -10,3 +10,8 @@ export const apiMovieList = axios.create({
         // 'x-rapidapi-key': config.X_RAPIDAPI_KEY,
     },
 });
+
+export const apiMovieDetail = axios.create({
+    baseURL: config.API_DETAIL_BASE_URL,
+    params: { apikey: config.API_DETAIL_KEY },
+});

@@ -1,6 +1,6 @@
-import { apiMovieList } from './baseAPIConfig';
+import { apiMovieDetail, apiMovieList } from './baseAPIConfig';
 
-export default async function getPopularMovies(queryParams: any) {
+export async function getPopularMovies(queryParams: any) {
     try {
         return await apiMovieList.get('', {
             params: {
@@ -11,5 +11,17 @@ export default async function getPopularMovies(queryParams: any) {
         });
     } catch (e) {
         console.error('movieInfoError', e);
+    }
+}
+
+export async function getDetailMovieInfo(iMDBId: string) {
+    try {
+        return await apiMovieDetail.get('', {
+            params: {
+                i: iMDBId,
+            },
+        });
+    } catch (e) {
+        console.error('movieDetailErrorInfo', e);
     }
 }

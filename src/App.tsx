@@ -5,6 +5,7 @@ import { routes } from './routs';
 
 //styles
 import './assets/reset.css';
+import './assets/base.css';
 
 function App() {
     return (
