@@ -1,6 +1,7 @@
 //types
 import { initialStateTypes } from '../../interfaces/redux/initialStateTypes';
 import {
+    MOVIE_DETAIL,
     MOVIE_DETAIL_REQUEST,
     MOVIE_DETAIL_REQUEST_FAIL,
     MOVIE_DETAIL_REQUEST_SUCCESS,
@@ -26,6 +27,9 @@ export default function movieReducer(state = initialState, action: any) {
         }
         case MOVIE_DETAIL_REQUEST: {
             return { ...state, movieId: action.payload };
+        }
+        case MOVIE_DETAIL: {
+            return { ...state, movieDetail: action.payload };
         }
         case MOVIE_DETAIL_REQUEST_SUCCESS: {
             return { ...state, movieDetailRequestSuccess: action.payload };

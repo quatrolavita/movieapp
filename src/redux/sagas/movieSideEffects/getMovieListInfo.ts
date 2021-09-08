@@ -1,7 +1,7 @@
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 
 //helpers
-import { getCurrentYear } from '../../../helpers/utils';
+import { calculatePageCount, getCurrentYear } from '../../../helpers/utils';
 
 //selectors
 import * as filterSelector from '../../filter/filterSelectors';
@@ -9,11 +9,8 @@ import * as filterSelector from '../../filter/filterSelectors';
 //actions
 import { getPopularMovies } from '../../../api/api';
 import { MOVIE_LIST_REQUEST } from '../../movie/types';
-import {
-    movieList,
-    setMovieDetailRequestFail,
-    setMovieDetailRequestSuccess,
-} from '../../movie/actions';
+import { movieList } from '../../movie/actions';
+import { setPageCount } from '../../filter/actions';
 
 function* fetchMovieListInfo() {
     const queryParams = {
@@ -27,9 +24,13 @@ function* fetchMovieListInfo() {
         const response: any = yield call(getPopularMovies, queryParams);
         console.log('MOVIE LIST', response);
         yield put(movieList(response.data.movie_results));
-        yield put(setMovieDetailRequestSuccess(true));
+        // @ts-ignore
+        const pageCount = yield call(
+            calculatePageCount,
+            response.data.Total_results
+        );
+        yield put(setPageCount(pageCount));
     } catch (e) {
-        yield put(setMovieDetailRequestFail(true));
         console.error(e);
     }
 }

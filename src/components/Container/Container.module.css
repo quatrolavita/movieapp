@@ -1,4 +1,4 @@
-.container {
+.default {
     position: relative;
     display: flex;
     width: 100vw;
@@ -7,6 +7,7 @@
     background-color: #1d1d1d;
     z-index: 10;
     margin: 0 auto;
+    align-items: center;
 
 }
 

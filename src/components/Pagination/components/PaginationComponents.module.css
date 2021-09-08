@@ -1,0 +1,44 @@
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin-left: 5px;
+}
+
+.left {
+    transform: rotate(135deg);
+    margin-right: 5px;
+}
+
+.pagination {
+    display: flex;
+}
+
+.paginatePage, .paginateSplit {
+    display: block;
+    width: 100%;
+    margin-right: 5px;
+}
+
+.paginatePage:hover, .paginateSplit:hover {
+    background-color: #8696a6;
+    color: #1d1d1d;
+}
+
+.breakLink, .pageLink {
+    color: white;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #8696a6;
+    color: #1d1d1d;
+}
+

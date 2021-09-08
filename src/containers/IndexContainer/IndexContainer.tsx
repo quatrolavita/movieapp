@@ -9,6 +9,7 @@ import { headerWithLogo } from '../../hocs/uiView/Header/headerWithLogo';
 import Header from '../../components/Header/Header';
 import Container from '../../components/Container/Container';
 import MovieCard from '../../components/MovieCard/MovieCard';
+import { Pagination } from '../../components/Pagination/Pagination';
 
 //action
 
@@ -25,19 +26,22 @@ function IndexContainer(props: any) {
     return (
         <>
             <HeaderWithLogo />
-            <Container>
-                <div className={styles.cardBox}>
-                    {movieList.map((movieItem: any, index: number) => {
-                        return (
-                            <MovieCard
-                                title={movieItem.title}
-                                imdb_id={movieItem.imdb_id}
-                                key={index}
-                                toMovieDetailPage={toMovieDetailPage}
-                            />
-                        );
-                    })}
+            <Container column>
+                <div className={styles.movieListContainer}>
+                    <div className={styles.cardBox}>
+                        {movieList.map((movieItem: any, index: number) => {
+                            return (
+                                <MovieCard
+                                    title={movieItem.title}
+                                    imdb_id={movieItem.imdb_id}
+                                    key={index}
+                                    toMovieDetailPage={toMovieDetailPage}
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
+                <Pagination />
             </Container>
         </>
     );

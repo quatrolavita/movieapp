@@ -1,9 +1,14 @@
 import { all } from 'redux-saga/effects';
 
 //sagas
-import { movieListInfoWatcher } from './movieSideEffect/getMovieListInfo';
-import { getMovieDetailInfoWatcher } from './movieSideEffect/getMovieDetailInfo';
+import { movieListInfoWatcher } from './movieSideEffects/getMovieListInfo';
+import { getMovieDetailInfoWatcher } from './movieSideEffects/getMovieDetailInfo';
+import { changePageWatcher } from './pageSideEffects/pagination';
 
 export default function* rootSaga() {
-    yield all([movieListInfoWatcher(), getMovieDetailInfoWatcher()]);
+    yield all([
+        movieListInfoWatcher(),
+        getMovieDetailInfoWatcher(),
+        changePageWatcher(),
+    ]);
 }

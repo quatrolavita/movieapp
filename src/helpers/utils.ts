@@ -13,3 +13,12 @@ export const getCurrentYear = () => {
 export const getMovieIDFromPathname = (history: any): string => {
     return history.location.pathname.split('/').slice(-1)[0];
 };
+
+export const calculatePageCount = (totalAmount: string): number | undefined => {
+    try {
+        const temp = +totalAmount;
+        return Math.ceil(temp / 20);
+    } catch (e) {
+        console.error('Error', e);
+    }
+};

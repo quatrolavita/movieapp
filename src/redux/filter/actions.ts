@@ -1,5 +1,10 @@
 //types
-import { CURRENT_PAGE, GET_NEXT_PAGE, GET_PREV_PAGE } from './types';
+import {
+    CURRENT_PAGE,
+    GET_NEXT_PAGE,
+    GET_PREV_PAGE,
+    PAGE_COUNT,
+} from './types';
 
 export function getNextPage(payload: boolean) {
     return {
@@ -15,9 +20,16 @@ export function getPrevPage(payload: boolean) {
     };
 }
 
-export function getCurrentPage(currentPage: number) {
+export function setCurrentPage(currentPage: number) {
     return {
         type: CURRENT_PAGE,
         payload: currentPage,
+    };
+}
+
+export function setPageCount(count: number) {
+    return {
+        type: PAGE_COUNT,
+        payload: count,
     };
 }
