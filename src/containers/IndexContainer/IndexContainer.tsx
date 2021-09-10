@@ -10,6 +10,7 @@ import Header from '../../components/Header/Header';
 import Container from '../../components/Container/Container';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { Pagination } from '../../components/Pagination/Pagination';
+import { PageLoader } from '../../components/Loaders/PageLoader';
 
 //action
 
@@ -26,23 +27,26 @@ function IndexContainer(props: any) {
     return (
         <>
             <HeaderWithLogo />
-            <Container column>
-                <div className={styles.movieListContainer}>
-                    <div className={styles.cardBox}>
-                        {movieList.map((movieItem: any, index: number) => {
-                            return (
-                                <MovieCard
-                                    title={movieItem.title}
-                                    imdb_id={movieItem.imdb_id}
-                                    key={index}
-                                    toMovieDetailPage={toMovieDetailPage}
-                                />
-                            );
-                        })}
+            <PageLoader>
+                <Container column>
+                    <div className={styles.movieListContainer}>
+                        <div className={styles.cardBox}>
+                            {movieList.map((movieItem: any, index: number) => {
+                                return (
+                                    <MovieCard
+                                        title={movieItem.title}
+                                        imdb_id={movieItem.imdb_id}
+                                        key={index}
+                                        toMovieDetailPage={toMovieDetailPage}
+                                        withRightMargin={index % 2 === 0}
+                                    />
+                                );
+                            })}
+                        </div>
                     </div>
-                </div>
-                <Pagination />
-            </Container>
+                </Container>
+            </PageLoader>
+            <Pagination />
         </>
     );
 }

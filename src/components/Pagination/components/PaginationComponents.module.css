@@ -1,3 +1,16 @@
+.paginationWrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    background-color: #1d1d1d;
+}
+
 .arrow {
     border: solid white;
     border-width: 0 3px 3px 0;
@@ -19,6 +32,9 @@
 
 .pagination {
     display: flex;
+    bottom: 50px;
+    left: 50%;
+    z-index: 100;
 }
 
 .paginatePage, .paginateSplit {

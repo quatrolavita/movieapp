@@ -1,9 +1,8 @@
 .default {
     position: relative;
     display: flex;
-    width: 100vw;
-    height: 100%;
-    padding: 96px 320px 36px;
+    width: 1024px;
+    padding: 96px 24px 36px;
     background-color: #1d1d1d;
     z-index: 10;
     margin: 0 auto;
@@ -13,4 +12,8 @@
 
 .column {
     flex-direction: column;
+}
+
+.spaceBetween {
+    justify-content: space-between;
 }

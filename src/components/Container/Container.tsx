@@ -5,12 +5,13 @@ import ClassNames from 'classnames/bind';
 import styles from './Container.module.css';
 
 const Container = (props: any) => {
-    const { children, column } = props;
+    const { children, column, spaceBetween } = props;
     let cx = ClassNames.bind({ ...styles });
 
     let containerStyles = cx({
         default: true,
         column: column,
+        spaceBetween: spaceBetween,
     });
 
     return <div className={containerStyles}>{children}</div>;

@@ -11,7 +11,7 @@ import {
 const initialState: initialFilterStateTypes = {
     getNextPage: false,
     getPrevPage: false,
-    currentPage: 1,
+    currentPage: 0,
     pageCount: 1,
 };
 

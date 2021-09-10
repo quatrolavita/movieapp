@@ -13,10 +13,12 @@ import {
     setMovieDetailRequestFail,
     setMovieDetailRequestSuccess,
 } from '../../movie/actions';
+import { setPageLoader } from '../../uiEffects/actions';
 
 function* getMovieDetailInfoWorker() {
     // @ts-ignore
     const iMDBId = yield select(movieSelector.movieId);
+    yield put(setPageLoader(true));
 
     try {
         // @ts-ignore
@@ -24,6 +26,7 @@ function* getMovieDetailInfoWorker() {
         console.log('movieDetailInfo', movieDetailInfo);
         yield put(movieDetail(movieDetailInfo.data));
         yield put(setMovieDetailRequestSuccess(true));
+        yield put(setPageLoader(false));
     } catch (e) {
         yield put(setMovieDetailRequestFail(true));
     }

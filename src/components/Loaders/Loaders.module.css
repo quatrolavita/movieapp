@@ -1,0 +1,33 @@
+.pageLoader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+}
+
+.pageLoader:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 40px ;
+    min-height: 40px ;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-left: 4px solid white;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: load8 1.1s infinite linear;
+    transition: opacity 0.3s;
+}
+
+@keyframes load8 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

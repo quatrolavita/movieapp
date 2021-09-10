@@ -1,2 +1,2 @@
-export const currentPage = (state: any) => state.filter.currentPage;
-export const pageCount = (state: any) => state.filter.pageCount;
+export const selectorCurrentPage = (state: any) => state.filter.currentPage;
+export const selectorPageCount = (state: any) => state.filter.pageCount;

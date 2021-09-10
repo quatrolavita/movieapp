@@ -17,7 +17,7 @@ export const getMovieIDFromPathname = (history: any): string => {
 export const calculatePageCount = (totalAmount: string): number | undefined => {
     try {
         const temp = +totalAmount;
-        return Math.ceil(temp / 20);
+        return Math.floor(temp / 20);
     } catch (e) {
         console.error('Error', e);
     }
