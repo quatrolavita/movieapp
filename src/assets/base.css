@@ -1,0 +1,13 @@
+body {
+    background-color: #1d1d1d;
+}
+
+#react-paginate ul {
+    display: flex;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#react-paginate li {
+    display: inline-block;
+}
